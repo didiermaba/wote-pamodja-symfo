@@ -1,17 +1,63 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+ <html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>
+			{% block title %}
+                Wote Pamodja
+			{% endblock %}
+            &mdash; Association Wote Pamodja
+		</title>
+		<link rel="icon" href="">
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+		{% block stylesheets %}
+		
+		 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700|Anton" rel="stylesheet">
+		 <link rel="stylesheet" href={{ asset("fonts/icomoon/style.css") }}>
+         <link rel="stylesheet" href={{ asset("css/bootstrap.min.css") }}>
+         <link rel="stylesheet" href={{ asset("css/magnific-popup.css") }}>
+         <link rel="stylesheet" href={{ asset("css/jquery-ui.css") }}>
+         <link rel="stylesheet" href={{ asset("css/owl.carousel.min.css") }}>
+         <link rel="stylesheet" href={{ asset("css/owl.theme.default.min.css") }}>
+         <link rel="stylesheet" href={{ asset("css/bootstrap-datepicker.css") }}>
+         <link rel="stylesheet" href={{ asset("fonts/flaticon/font/flaticon.css") }}> 
+         <link rel="stylesheet" href={{ asset("css/aos.css") }}>
+         <link rel="stylesheet" href={{ asset("css/style.css") }}>
+        
         {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
-</html>
+        
+        {% block javascripts %}
+
+			{% block importmap %} {{ importmap('app') }} {% endblock %} 
+            
+				<script src={{ asset("js/jquery-3.3.1.min.js") }} defer></script>
+				<script src={{ asset("js/jquery-ui.js") }} defer></script>
+				<script src={{ asset("js/popper.min.js") }} defer></script>
+				<script src={{ asset("js/bootstrap.min.js") }} defer></script>
+				<script src={{ asset("js/owl.carousel.min.js") }} defer></script>
+				<script src={{ asset("js/jquery.magnific-popup.min.js") }} defer></script>
+				<script src={{ asset("js/jquery.sticky.js") }} defer></script>
+				<script src={{ asset("js/jquery.waypoints.min.js") }} defer></script>
+				<script src={{ asset("js/jquery.animateNumber.min.js") }} defer></script>
+				<script src={{ asset("js/aos.js") }} defer></script>
+				<script src={{ asset("js/main.js") }} defer></script>
+		{% endblock %}
+		</head>
+		<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300"> 
+
+                    {{ include("_partials/_navbar.html.twig") }}
+
+                    {% block home %}{% endblock %}
+			        {% block about %}{% endblock %}
+			        {% block NosActions %}{% endblock %}
+			        {% block don %}{% endblock %}
+			        {% block blog %}{% endblock %}
+			        {% block contact %}{% endblock %} 
+                    
+                    {{ include("_partials/_footer.html.twig") }}
+  </div>
+               
+			</body>
+		</head>
+	</html>
