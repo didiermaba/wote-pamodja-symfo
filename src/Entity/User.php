@@ -74,6 +74,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->posts = new ArrayCollection();
         $this->articles = new ArrayCollection();
         $this->payments = new ArrayCollection();
+        $this->created_at = new \DateTime();
     }
 
 
