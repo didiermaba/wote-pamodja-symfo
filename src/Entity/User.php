@@ -68,6 +68,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private bool $isVerified = false;
 
+    #[ORM\Column(length: 180)]
+    private ?string $firstname = null;
+
+    #[ORM\Column(length: 180)]
+    private ?string $lastname = null;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -308,5 +314,32 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
 
+    public function setFirstname(string $firstname): static
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(string $lastname): static
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    // public function __toString(): string 
+    // {
+    //     return $this->getFullname();
+    // }
 }

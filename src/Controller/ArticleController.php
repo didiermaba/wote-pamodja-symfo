@@ -8,8 +8,8 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class ArticleController extends AbstractController
 {
-    #[Route('/compte', name: 'account')]
-    public function index(): Response
+    #[Route('/compte', name: 'account', methods: ['GET', 'POST'])]
+    public function account(): Response
     {
         return $this->render('article/account.html.twig', [
             

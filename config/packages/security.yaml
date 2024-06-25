@@ -9,6 +9,12 @@ security:
             entity:
                 class: App\Entity\User
                 property: email
+
+    # role_hierarchy:
+    #     ROLE_HOST:          [ROLE_USER]            
+    #     ROLE_ADMIN:         [ROLE_HOST]
+    #     ROLE_SUPERADMIN:     [ROLE_HOST]  
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -38,7 +44,10 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/register, roles: PUBLIC_ACCESS }
+        - { path: ^/login, roles: PUBLIC_ACCESS }
+        - { path: ^/account, roles: ROLE_USER }
+        # - { path: ^/account, roles: ROLE_USER }
 
 when@test:
     security:
