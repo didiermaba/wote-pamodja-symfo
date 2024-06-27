@@ -56,12 +56,12 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);
         yield MenuItem::linkToCrud('Post', 'fas fa-book', Post::class);
-        yield MenuItem::linkToCrud('Paiement', 'fas fa-facture', Payment::class);
-        yield MenuItem::linkToCrud('Factures', 'fas fa-', Invoice::class);
-        yield MenuItem::linkToCrud('Images', 'fas fa-', Cover::class);
-        yield MenuItem::linkToCrud('Commentaires', 'fas fa-', Comment::class);
-        yield MenuItem::linkToCrud('Categories-Posts', 'fas fa-', Category::class);
-        yield MenuItem::linkToCrud('Categories-Articles', 'fas fa-', CategoryArticle::class);
+        yield MenuItem::linkToCrud('Paiement', 'fas fa-file', Payment::class);
+        yield MenuItem::linkToCrud('Factures', 'fas fa-file-text', Invoice::class);
+        yield MenuItem::linkToCrud('Images', 'fas fa-image', Cover::class);
+        yield MenuItem::linkToCrud('Commentaires', 'fas fa-comment', Comment::class);
+        yield MenuItem::linkToCrud('Categories-Posts', 'fas fa-tags', Category::class);
+        yield MenuItem::linkToCrud('Categories-Articles', 'fas fa-tags', CategoryArticle::class);
         yield MenuItem::linkToCrud('Articles', 'fas fa-book', Article::class);
         yield MenuItem::linkToRoute('Acueil', 'fas fa-arrow-left', 'home');
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
