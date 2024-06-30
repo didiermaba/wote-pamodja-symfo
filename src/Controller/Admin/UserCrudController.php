@@ -23,6 +23,7 @@ class UserCrudController extends AbstractCrudController
 {
     return $actions
         ->add(Crud::PAGE_INDEX, Action::DETAIL)
+        ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN');
        
     ;
 }
@@ -30,15 +31,16 @@ class UserCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            IdField::new('id')->onlyOnIndex(),
             ImageField::new('image')
                 ->setBasePath('uploads/users')
-                ->setUploadDir('public/images/hero_1.jpg'),
+                ->setUploadDir('public/uploads/users/'),
             TextField::new('email'),
             TextField::new('firstname'),
             TextField::new('lastname'),
             TextField::new('nickname'),
-            // TextField::new('nickname'),
-            // TextField::new('nickname'),
+            TextField::new('roles'),
+            TextField::new('password'),
         ];
     }
     

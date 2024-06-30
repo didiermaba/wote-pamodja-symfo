@@ -11,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
 class ArticleCrudController extends AbstractCrudController
 {
@@ -23,6 +24,7 @@ class ArticleCrudController extends AbstractCrudController
     {
         return $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
+            ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
            
         ;
     }
@@ -31,11 +33,14 @@ class ArticleCrudController extends AbstractCrudController
     {
         return [
             // IdField::new('id'),
-            TextField::new('title'),
+            TextField::new('title')->hideOnIndex(),
+            TextField::new('slug'),
             TextEditorField::new('content'),
             ImageField::new('image')
-            ->setBasePath('uploads/cover/')
-            ->setUploadDir('public/uploads/cover/'),
+            ->setBasePath('uploads/articles/')
+            ->setUploadDir('public/uploads/articles/'),
+            AssociationField::new('author_id')->hideOnIndex(),
+            AssociationField::new('category_id')->hideOnIndex(),
         ];
     }
     

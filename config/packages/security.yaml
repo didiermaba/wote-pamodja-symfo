@@ -10,10 +10,10 @@ security:
                 class: App\Entity\User
                 property: email
 
-    # role_hierarchy:
-    #     ROLE_HOST:          [ROLE_USER]            
-    #     ROLE_ADMIN:         [ROLE_HOST]
-    #     ROLE_SUPERADMIN:     [ROLE_HOST]  
+    role_hierarchy:
+        ROLE_HOST:          [ROLE_USER]            
+        ROLE_ADMIN:         [ROLE_HOST]
+        ROLE_SUPERA_DMIN:     [ROLE_HOST]  
 
     firewalls:
         dev:
