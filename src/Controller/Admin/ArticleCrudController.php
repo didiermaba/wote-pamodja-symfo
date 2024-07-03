@@ -34,13 +34,13 @@ class ArticleCrudController extends AbstractCrudController
         return [
             // IdField::new('id'),
             TextField::new('title')->hideOnIndex(),
-            TextField::new('slug'),
+            // TextField::new('slug'),
             TextEditorField::new('content'),
             ImageField::new('image')
             ->setBasePath('uploads/articles/')
             ->setUploadDir('public/uploads/articles/'),
-            AssociationField::new('author_id')->hideOnIndex(),
-            AssociationField::new('category_id')->hideOnIndex(),
+            // AssociationField::new('author_id')->hideOnIndex(),
+            // AssociationField::new('category_id')->hideOnIndex(),
         ];
     }
     

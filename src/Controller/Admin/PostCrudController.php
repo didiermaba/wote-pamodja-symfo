@@ -21,7 +21,7 @@ class PostCrudController extends AbstractCrudController
         return [
             IdField::new('id')->onlyOnIndex(),
             TextField::new('title'),
-            // TextField::new('slug'),
+            TextField::new('slug'),
             TextEditorField::new('content'),
             ImageField::new('image')
             ->setBasePath('uploads/posts')

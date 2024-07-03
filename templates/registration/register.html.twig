@@ -49,14 +49,76 @@
                     } 
                 }) }}
                     
-                     {# <div class="form-floating mb-2">
+                     <div class="form-floating mb-2">
+                        {{ form_widget(registrationForm.lastname, {
+                            attr: {
+                                class: 'form-control',
+                            }
+                        }) }}
+                        <label for="floatingInput">Votre Nom ?</label>
+                    </div> <!-- END OF LASTNAME INPUT -->
+
+                     <div class="form-floating mb-2">
+                        {{ form_widget(registrationForm.firstname, {
+                            attr: {
+                                class: 'form-control',
+                            }
+                        }) }}
+                        <label for="floatingInput">Votre Prénom ?</label>
+                    </div> <!-- END OF FIRSTNAME INPUT -->
+
+                    <div class="form-floating mb-2">
                         {{ form_widget(registrationForm.nickname, {
                             attr: {
                                 class: 'form-control',
                             }
                         }) }}
-                        <label for="floatingInput">Votre Nom </label>
-                    </div> <!-- END OF NICKNAME INPUT --> #}
+                        <label for="floatingInput">Votre Pseudo ?</label>
+                    </div> <!-- END OF NICKNAME INPUT -->
+
+                    <div class="form-floating mb-2">
+                        {{ form_widget(registrationForm.birthyear, {
+                            attr: {
+                                class: 'form-control',
+                            }
+                        }) }}
+                        <label for="floatingInput">Votre année de naissance ?</label>
+                    </div> <!-- END OF BIRTHYEAR INPUT -->
+                    <div class="form-floating mb-2">
+                        {{ form_widget(registrationForm.adress, {
+                            attr: {
+                                class: 'form-control',
+                            }
+                        }) }}
+                        <label for="floatingInput">Votre adresse ?</label>
+                    </div> <!-- END OF ADRESS INPUT -->
+
+                    <div class="form-floating mb-2">
+                        {{ form_widget(registrationForm.city, {
+                            attr: {
+                                class: 'form-control',
+                            }
+                        }) }}
+                        <label for="floatingInput">Votre ville?</label>
+                    </div> <!-- END OF CITY INPUT -->
+
+                    <div class="form-floating mb-2">
+                        {{ form_widget(registrationForm.country, {
+                            attr: {
+                                class: 'form-control',
+                            }
+                        }) }}
+                        <label for="floatingInput">Votre pays ?</label>
+                    </div> <!-- END OF COUNTRY INPUT -->
+
+                    <div class="form-floating mb-2">
+                        {{ form_widget(registrationForm.job, {
+                            attr: {
+                                class: 'form-control',
+                            }
+                        }) }}
+                        <label for="floatingInput">Votre profession ?</label>
+                    </div> <!-- END OF BIRTHYEAR INPUT -->
 
                     <div class="form-floating mb-2">
                         {{ form_widget(registrationForm.email, {
@@ -73,7 +135,7 @@
                                 class: 'form-control',
                             }
                         }) }}
-                        <label for="floatingPassword">Choisir un mot de passe</label>
+                        <label for="floatingPassword">Créer un mot de passe</label>
                     </div> <!-- END OF PASSWORD INPUT -->
 
                     <div id="passwordHelpBlock" class="form-text mb-2 visually-hidden">
