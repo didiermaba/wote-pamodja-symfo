@@ -37,7 +37,7 @@ class ContactController extends AbstractController
                 $this->addFlash('danger', 'Impossible d\'envoyer votre email');
             }
         }
-        return $this->render('contact/contact.html.twig', [
+        return $this->render('category/index.html.twig', [
             'form' => $form,
         ]);
     }

@@ -24,14 +24,4 @@ class PageController extends AbstractController
         ]);
     }
 
-
-    #[Route('/compte', name: 'account', methods: ['GET', 'POST'])]
-    public function compte(): Response
-    {
-       
-        return $this->render('page/account.html.twig', [
-            
-        ]);
-    }
-
 }

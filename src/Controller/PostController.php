@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class PostController extends AbstractController
 {
-    #[Route('/post', name: 'post',  methods:['GET'])]
+    #[Route('/blog', name: 'blog',  methods:['GET'])]
     public function index(
         PostRepository $postRepository,
         CategoryRepository $categoryRepository
