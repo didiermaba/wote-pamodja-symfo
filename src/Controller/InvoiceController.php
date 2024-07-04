@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class InvoiceController extends AbstractController
 {
-    #[Route('/blog', name: 'our_blog')]
+    #[Route('/blog', name: 'blog')]
     public function forum(): Response
     {
         return $this->render('blog/index.html.twig', [
