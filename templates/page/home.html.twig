@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{# {% extends 'base.html.twig' %} #}
 
 {% block title %}
 	Accueil
@@ -7,7 +7,7 @@
 {% block home %}
 
 	<div class="owl-carousel slide-one-item">
-		{# {% for item for st %} #}
+		
 		{# <a href="#"><img src={{ asset("uploads/cover/nutrition.jpg") }} alt="Image" class="img-fluid" ></a>
 		      <a href="#"><img src={{ asset("uploads/cover/education-3670453_1280.jpg") }} alt="Image" class="img-fluid" ></a>
 		      <a href="#"><img src="images/hero_2.jpg" alt="Image" class="img-fluid"></a>
@@ -43,7 +43,8 @@
 							<span class="icon">
 								<span class="icon-play"></span>
 							</span>
-							<img src="images/hero_1_no-text.jpg" alt="Image" class="img-fluid">
+							<img src={{ asset("uploads/articles/école.jpg") }} alt="Image" class="img-fluid" ></a>
+							{# <img src="images/hero_1_no-text.jpg" alt="Image" class="img-fluid"> #}
 						</a>
 					</figure>
 				</div>

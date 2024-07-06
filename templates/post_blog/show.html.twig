@@ -1,0 +1,56 @@
+{# {% extends 'base.html.twig' %} #}
+
+{% block title %}Post{% endblock %}
+
+{% block postBlog %}
+    <h1>Post</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ post.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ post.title }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ post.slug }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ post.content }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ post.image }}</td>
+            </tr>
+            <tr>
+                <th>IsPublished</th>
+                <td>{{ post.isPublished ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Updated_at</th>
+                <td>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+        
+    <div>
+        <a href="{{ path('app_comment_blog_new', {'id': post.id}) }}" >Ajouter un commentaire</a>
+    </div>
+
+    <div>
+       {% for comment in comments %}
+        {# <div>{{ comment.user.nickname }} a dit : </div> #}
+        <div>{{ comment.content }}</div>
+       {% endfor %}
+    </div>
+
+{% endblock %}
