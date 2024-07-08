@@ -1,172 +1,95 @@
-{# {% extends 'base.html.twig' %} #}
+{% extends 'base.html.twig' %}
 
 {% block title %}
 	Accueil
 {% endblock %}
 
-{% block home %}
+{% block body %}
 
-	<div class="owl-carousel slide-one-item">
-		
-		{# <a href="#"><img src={{ asset("uploads/cover/nutrition.jpg") }} alt="Image" class="img-fluid" ></a>
-		      <a href="#"><img src={{ asset("uploads/cover/education-3670453_1280.jpg") }} alt="Image" class="img-fluid" ></a>
-		      <a href="#"><img src="images/hero_2.jpg" alt="Image" class="img-fluid"></a>
-		      <a href="#"><img src="images/orphans.jpg" alt="Image" class="img-fluid"></a> #}
+	<p>Bienvenue sur le site de l'association
+		<em>Woté Pamodja</em>
+	</p>
 
-		{% for cover in covers %}
-         <a href="#"> <img src={{ cover.image }} alt="" class="img-fluid"></a>
-		{% endfor %}
+<div class="owl-carousel slide-one-item ">
 
+	 <a href="#"><img src={{ asset("uploads/cover/nutrition.jpg") }} alt="Image" class="img-fluid" ></a>
+	{# {% for cover in covers %}
+		<a href="#">
+			<img src={{ cover.image }} alt="" class="img-fluid">
+		</a>
+	{% endfor %} #}
+
+</div>
+
+<div class="d-block d-md-flex intro-engage">
+	<div class="">
+		<h2>Sauver un orphelin</h2>
+		<p>"Ensemble, donnons à chaque orphelin l'espoir d'un avenir meilleur."</p>
 	</div>
+	<div>
+		<h2>Nourrir les affamés</h2>
+		<p>"Unissons nos forces pour que plus personne ne connaisse la faim."</p>
+	</div>
+	<div>
+		<h2>Education gratuite</h2>
+		<p>"Ouvrons les portes du savoir à tous, pour un avenir équitable et prometteur."</p>
+	</div>
+</div>
 
-	<div class="d-block d-md-flex intro-engage">
-		<div class="">
-			<h2>Sauver un orphelin</h2>
-			<p>"Ensemble, donnons à chaque orphelin l'espoir d'un avenir meilleur."</p>
+<div class="site-section bg-image overlay counter" style="background-image: url('images/hero_1_no-text.jpg');" id="about-section">
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-lg-6 mb-4">
+				<figure class="block-img-video-1" data-aos="fade">
+					<a href="https://vimeo.com/45830194" class="popup-vimeo">
+						<span class="icon">
+							<span class="icon-play"></span>
+						</span>
+						<img src={{ asset("uploads/articles/école.jpg") }} alt="Image" class="img-fluid"></a>
+				</a>
+			</figure>
 		</div>
-		<div>
-			<h2>Nourrir les affamés</h2>
-			<p>"Unissons nos forces pour que plus personne ne connaisse la faim."</p>
-		</div>
-		<div>
-			<h2>Education gratuite</h2>
-			<p>"Ouvrons les portes du savoir à tous, pour un avenir équitable et prometteur."</p>
+		<div class="col-lg-5 ml-auto align-self-lg-center">
+			<h2 class="text-black mb-4 text-uppercase section-title">Notre Mission</h2>
+			<p class="text-black">Notre mission est de transformer des vies en répondant aux besoins fondamentaux de ceux qui en ont le plus besoin. En sauvant des orphelins, nous offrons à chaque enfant sans famille l'opportunité de grandir dans un environnement aimant et sécurisant, leur permettant ainsi de devenir des membres actifs et épanouis de la société. En parallèle, nous nous engageons à nourrir les affamés, car personne ne devrait jamais souffrir de la faim. Nous travaillons sans relâche pour fournir des repas nutritifs et durables à ceux qui luttent contre l'insécurité alimentaire, en veillant à ce que chaque personne puisse vivre avec dignité et espoir.</p>
+			<p class="text-black">De plus, nous croyons fermement que l'éducation est la clé d'un avenir prometteur. C'est pourquoi nous militons pour une éducation gratuite et accessible à tous, sans distinction. En offrant des opportunités d'apprentissage à chaque enfant, nous jetons les bases d'une société plus équitable, où chacun a la chance de réaliser son plein potentiel. Ensemble, nous bâtissons un monde où les enfants sont protégés, les affamés sont nourris, et l'éducation est un droit, non un privilège.</p>
 		</div>
 	</div>
-
-	<div class="site-section bg-image overlay counter" style="background-image: url('images/hero_1_no-text.jpg');" id="about-section">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-lg-6 mb-4">
-					<figure class="block-img-video-1" data-aos="fade">
-						<a href="https://vimeo.com/45830194" class="popup-vimeo">
-							<span class="icon">
-								<span class="icon-play"></span>
-							</span>
-							<img src={{ asset("uploads/articles/école.jpg") }} alt="Image" class="img-fluid" ></a>
-							{# <img src="images/hero_1_no-text.jpg" alt="Image" class="img-fluid"> #}
-						</a>
-					</figure>
-				</div>
-				<div class="col-lg-5 ml-auto align-self-lg-center">
-					<h2 class="text-black mb-4 text-uppercase section-title">Notre Mission</h2>
-					<p class="text-black">Notre mission est de transformer des vies en répondant aux besoins fondamentaux de ceux qui en ont le plus besoin. En sauvant des orphelins, nous offrons à chaque enfant sans famille l'opportunité de grandir dans un environnement aimant et sécurisant, leur permettant ainsi de devenir des membres actifs et épanouis de la société. En parallèle, nous nous engageons à nourrir les affamés, car personne ne devrait jamais souffrir de la faim. Nous travaillons sans relâche pour fournir des repas nutritifs et durables à ceux qui luttent contre l'insécurité alimentaire, en veillant à ce que chaque personne puisse vivre avec dignité et espoir.</p>
-					<p class="text-black">De plus, nous croyons fermement que l'éducation est la clé d'un avenir prometteur. C'est pourquoi nous militons pour une éducation gratuite et accessible à tous, sans distinction. En offrant des opportunités d'apprentissage à chaque enfant, nous jetons les bases d'une société plus équitable, où chacun a la chance de réaliser son plein potentiel. Ensemble, nous bâtissons un monde où les enfants sont protégés, les affamés sont nourris, et l'éducation est un droit, non un privilège.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 mb-4 col-lg-0 col-lg-3">
-					<div class="block-counter-1">
-						<span class="number">
-							<span data-number="15">0</span>
-						</span>
-						<span class="caption text-black">Nombre d'orphelinats</span>
-					</div>
-				</div>
-				<div class="col-md-6 mb-4 col-lg-0 col-lg-3">
-					<div class="block-counter-1">
-						<span class="number">
-							<span data-number="392">0</span>
-						</span>
-						<span class="caption text-black">Nombre de dons</span>
-					</div>
-				</div>
-				<div class="col-md-6 mb-4 col-lg-0 col-lg-3">
-					<div class="block-counter-1">
-						<span class="number">
-							<span data-number="3293">0</span>
-						</span>
-						<span class="caption text-black">Nombre de bénévoles</span>
-					</div>
-				</div>
-				<div class="col-md-6 mb-4 col-lg-0 col-lg-3">
-					<div class="block-counter-1">
-						<span class="number">
-							<span data-number="1212">0</span>
-						</span>
-						<span class="caption text-black">Nombre d'orphelins</span>
-					</div>
-				</div>
+	
+</div></div>
+<div class="site-section bg-image overlay counter text-black " id="discover-section">
+<div class="container">
+	<div class="row mb-5 justify-content-center">
+		<div class="col-md-7 text-center">
+			<div class="block-heading-1">
+				<h2 class="text-black text-uppercase section-title">Nos Actions</h2>
+				<p class="text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto aperiam unde natus voluptates placeat accusamus vel laborum cupiditate. Reiciendis commodi perferendis dignissimos, amet quis.</p>
 			</div>
 		</div>
 	</div>
+	<div class="row mb-5">
 
-	<div class="site-section bg-light counter" id="discover-section">
-		<div class="container">
-			<div class="row mb-5 justify-content-center">
-				<div class="col-md-7 text-center">
-					<div class="block-heading-1">
-						<h2 class="text-black text-uppercase">Nos Actions</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto aperiam unde natus voluptates placeat accusamus vel laborum cupiditate. Reiciendis commodi perferendis dignissimos, amet quis.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row mb-5">
-
-				<div class="col-lg-6 mb-5">
-					<img src="images/hero_1_no-text.jpg" alt="Image" class="img-fluid">
-				</div>
-				<div class="col-lg-5 ml-auto align-self-center">
-					<h3 class="text-black text-uppercase mb-4">Construire des écoles en Afrique</h3>
-					<p class="mb-5">"Construire des écoles en Afrique, c'est investir dans l'avenir du continent. Chaque nouvelle école offre à des milliers d'enfants la chance d'accéder à une éducation de qualité, ouvrant ainsi la voie à un développement durable et à la réduction des inégalités."</p>
-
-					<div class="row mb-4">
-						<div class="col-md-6">
-							<div class="block-counter-1 block-counter-1-sm">
-								<span class="number">
-									<span data-number="15">0</span>
-								</span>
-								<span class="caption text-black">Ecoles</span>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="block-counter-1 block-counter-1-sm">
-								<span class="number">
-									<span data-number="1039">0</span>
-								</span>
-								<span class="caption text-black">Etudiants</span>
-							</div>
-						</div>
-					</div>
-
-
-				</div>
-
-
-			</div>
-
-			<div class="row mb-5">
-
-				<div class="col-lg-6 mb-5 order-lg-2">
-					<img src="images/hero_2_no-text.jpg" alt="Image" class="img-fluid">
-				</div>
-				<div class="col-lg-5 mr-auto align-self-center order-lg-1">
-					<h3 class="text-black text-uppercase mb-4">Nourrir les enfants en Afrique</h3>
-					<p class="mb-5">"Nourrir les enfants en Afrique, c'est garantir leur croissance saine et leur permettre de se concentrer sur leur éducation. En luttant contre la malnutrition, nous posons les bases d'un avenir plus prospère pour les générations futures."</p>
-
-					<div class="row">
-						<div class="col-md-6">
-							<div class="block-counter-1 block-counter-1-sm">
-								<span class="number">
-									<span data-number="3298">0</span>
-								</span>
-								<span class="caption text-black">Enfants</span>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="block-counter-1 block-counter-1-sm">
-								<span class="number">
-									<span data-number="38">0</span>
-								</span>
-								<span class="caption text-black">Orphelinats</span>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
+		<div class="col-lg-6 mb-5">
+			<img src="images/hero_1_no-text.jpg" alt="Image" class="img-fluid">
 		</div>
+		<div class="col-lg-5 ml-auto align-self-center">
+			<h3 class="text-black text-uppercase mb-4">Construire des écoles en Afrique</h3>
+			<p class="mb-5">"Construire des écoles en Afrique, c'est investir dans l'avenir du continent. Chaque nouvelle école offre à des milliers d'enfants la chance d'accéder à une éducation de qualité, ouvrant ainsi la voie à un développement durable et à la réduction des inégalités."</p>
+
+		</div>
+
+
 	</div>
 
+	<div class="row mb-5">
 
-{% endblock %}
+		<div class="col-lg-6 mb-5 order-lg-2">
+			<img src="images/hero_2_no-text.jpg" alt="Image" class="img-fluid">
+		</div>
+		<div class="col-lg-5 mr-auto align-self-center order-lg-1">
+			<h3 class="text-black text-uppercase mb-4">Nourrir les enfants en Afrique</h3>
+			<p class="mb-5">"Nourrir les enfants en Afrique, c'est garantir leur croissance saine et leur permettre de se concentrer sur leur éducation. En luttant contre la malnutrition, nous posons les bases d'un avenir plus prospère pour les générations futures."</p>
+
+		</div>
+	</div>
+</div></div>{% endblock %}

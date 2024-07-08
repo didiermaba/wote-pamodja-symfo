@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class ContactDTO
 {
-    #[Assert\NotBlank]
+    #[Assert\NotBlank] // champs rempli obligatoirement
     #[Assert\Length(min:3, max:200)]
     public string $name = '';
 

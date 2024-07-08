@@ -16,11 +16,4 @@ class PaymentController extends AbstractController
         ]);
     }
 
-    // #[Route('/blog', name: 'our_blog')]
-    // public function forum(): Response
-    // {
-    //     return $this->render('blog/index.html.twig', [
-            
-    //     ]);
-    // }
 }

@@ -18,9 +18,9 @@ class ContactController extends AbstractController
     #[Route('/contact', name: 'contact')]
     public function contact(Request $request, MailerInterface $mailer): Response
     {
-        $data = new ContactDTO();
+        $data = new ContactDTO(); // initialisation des données (objet vide)
 
-        $form = $this->createForm(ContactType::class, $data);
+        $form = $this->createForm(ContactType::class, $data); // création de form & on lui passe des données
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $mail = (new TemplatedEmail())

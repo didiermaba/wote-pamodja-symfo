@@ -1,64 +1,55 @@
-{# {% extends 'base.html.twig' %} #}
+{% extends 'base.html.twig' %}
 
-{% block title %}Category{% endblock %}
+{% block title %}Category
+{% endblock %}
 
-{% block catShow %}
-    <h1>{{ category.name }}</h1>
+{% block body %}
 
-    <table class="table">
-        <tbody>
-            <tr>
-                {# <th>Id</th> #}
-                {# <td>{{ category.id }}</td> #}
-            </tr>
-            <tr>
-                {# <th>Name</th> #}
-                {# <td>{{ category.name }}</td> #}
-            </tr>
-        </tbody>
-    </table>
+	<div class="site-section bg-image overlay counter" id="discover-section">
+        <div class="container">
+			<div class="row mb-5 justify-content-center">
+				<div class="col-md-7 text-center">
+					<div class="block-heading-1">
+						<h2 class="text-black text-uppercase section-title">{{ category.name }}</h2>
+						<p class="text-black">Par nos thèmes nous arrivons à preter oreille à ce que les membres de notre association attendent de nous.</p>
+					</div>
+				</div>
+			</div>
 
-    <a href="{{ path('app_category_blog_index') }}">Retour à la liste</a>
+		<a href="{{ path('app_category_blog_index') }}">Retour à la liste des catégories</a>
 
-    <div>
-         
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Slug</th>
-                <th>Content</th>
-                <th>Image</th>
-                <th>IsPublished</th>
-                <th>Created_at</th>
-                <th>Updated_at</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for post in posts %}
-            <tr>
-                <td>{{ post.id }}</td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.slug }}</td>
-                <td>{{ post.content }}</td>
-                <td>{{ post.image }}</td>
-                <td>{{ post.isPublished ? 'Yes' : 'No' }}</td>
-                <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_post_blog_show', {'post': post.id}) }}">Voir</a>
-                   
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    </div>
+		<div>
+
+			<table class="table">
+				<thead>
+					<tr>
+
+						<th>Articles</th>
+						<th>Crée le :</th>
+						<th></th>
+
+					</tr>
+				</thead>
+				<tbody>
+					{% for post in posts %}
+						<tr>
+
+							<td>{{ post.title }}</td>
+							<td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+							<td>
+								<a href="{{ path('app_post_blog_show', {'id': post.id}) }}">Consulter</a>
+
+							</td>
+						</tr>
+					{% else %}
+						<div class="text-danger">
+							Aucune par encore d'article disponible
+						</div>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+       </div>
+   </div>
 
 {% endblock %}
