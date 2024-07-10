@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ArticleRepository;
 use App\Repository\CoverRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,12 +15,14 @@ class PageController extends AbstractController
     public function index(
         Request $request,
         CoverRepository $coverRepository,
+        ArticleRepository $articleRepository,
     ): Response 
     {
        $covers = $coverRepository->findAll() ;
-        //  dd($covers);
+       $articles = $articleRepository->findAll();
         return $this->render('page/home.html.twig', [ 
-            'covers' => $covers
+            'covers' => $covers,
+            'articles' => $articles
           
         ]);
     }

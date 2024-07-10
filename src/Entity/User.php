@@ -356,10 +356,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    // public function __toString(): string 
-    // {
-    //     return $this->getFullname();
-    // }
+    public function getFullname(): string
+    {
+        return $this->nickname; 
+    }
+
+    public function __toString(): string 
+    {
+        return $this->getFullname();
+    }
 
     public function getBirthyear(): ?int
     {

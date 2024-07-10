@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category
-{% endblock %}
+{% block title %}Category{% endblock %}
 
 {% block body %}
 
@@ -19,26 +18,21 @@
 		<a href="{{ path('app_category_blog_index') }}">Retour à la liste des catégories</a>
 
 		<div>
-
 			<table class="table">
 				<thead>
 					<tr>
-
 						<th>Articles</th>
 						<th>Crée le :</th>
 						<th></th>
-
 					</tr>
 				</thead>
 				<tbody>
 					{% for post in posts %}
 						<tr>
-
 							<td>{{ post.title }}</td>
 							<td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
 							<td>
 								<a href="{{ path('app_post_blog_show', {'id': post.id}) }}">Consulter</a>
-
 							</td>
 						</tr>
 					{% else %}

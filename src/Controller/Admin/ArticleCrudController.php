@@ -39,8 +39,8 @@ class ArticleCrudController extends AbstractCrudController
             ImageField::new('image')
             ->setBasePath('uploads/articles/')
             ->setUploadDir('public/uploads/articles/'),
-            // AssociationField::new('author_id')->hideOnIndex(),
-            // AssociationField::new('category_id')->hideOnIndex(),
+            AssociationField::new('author'),
+            AssociationField::new('categoryArticle')->hideOnIndex(),
         ];
     }
     

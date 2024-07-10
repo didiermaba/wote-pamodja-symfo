@@ -36,7 +36,5 @@ class CategoryBlogController extends AbstractController
             'category' => $category,
             'posts' => $postRepository->findBy(['category' => $category])
         ]);
-    }
-
-    
+    }    
 }
